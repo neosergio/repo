@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from django.conf import settings
+from django.conf import settings 
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -18,4 +18,8 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$','django.views.static.serve',
 		{'document_root':settings.MEDIA_ROOT,}
 	),
+	url(r'^$', 'groovys.views.index'),
+    url(r'^new/$', 'groovys.views.new'),
+    url(r'^login/$', 'groovys.views.login_view'),
+    url(r'^logout/$', 'groovys.views.logout_view'),
 )

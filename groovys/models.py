@@ -14,9 +14,9 @@ class File(models.Model):
 	def file_link(self):
 		if self.groovy_file:
 			print self.groovy_file.url
-			return "<a href='%s'>download</a>" % (self.groovy_file.url,)
+			return "<a class='btn btn-primary' href='%s'>download</a>" % (self.groovy_file.url,)
 		else:
 			return "No attachment"
 
-	file_link.allow_tags = True
+	file_link.allow_tags = False
 

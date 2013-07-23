@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block htmlhead %}
+	<style>
+		.helptext {font-size: 12px; color:green; display: block;}
+		.errorlist {font-size: 12px; font-weight: bold; color:red; display: block; }
+	</style>
+{% endblock htmlhead %}
+{% block htmlbody %}
+	<div class='well'>
+		<form method='post' enctype='multipart/form-data'>{% csrf_token %}
+			{{form}}
+			<input type="submit" class="btn btn-success">
+		</form>
+	</div>
+{% endblock htmlbody %}
