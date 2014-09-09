@@ -1,0 +1,26 @@
+<h1>HOLA mundo</h1>
+{% for file in files %}
+
+    {{ file.file_type }}
+    {{ file.id }}
+    {{ file.slug }}
+    <a href="{% url "files_view" file_id=file.id slug=file.slug %}">{{ file.datetime }}</a>
+{% endfor %}
+
+<div class="pagination">
+    <ul>
+        {% if paginator.has_previous %}
+        <li><a href="?page={{ paginator.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        {% for pg in paginator.page_range %}
+        {% if paginator.number == pg %}
+        <li class="active"><a href="?page={{ pg }}">{{ pg }}</a></li>
+        {% else %}
+        <li><a href="?page={{ pg }}">{{ pg }}</a></li>
+        {% endif %}
+        {% endfor %}
+        {% if paginator.has_next %}
+        <li><a href="?page={{ paginator.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
+</div>

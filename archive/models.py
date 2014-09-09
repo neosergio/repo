@@ -18,6 +18,7 @@ class File(models.Model):
     description = models.TextField(help_text="description of the file")
     datafile = models.FileField(upload_to='data', help_text='file to upload')
     datetime = models.DateTimeField(auto_now=True, auto_now_add=True)
+    slug = models.SlugField()
 
     def __unicode__(self):
         return self.description

@@ -1,0 +1,8 @@
+<h1>Files</h1>
+<ul>
+{% for file in file_list %}
+    <li>{{ file.datetime|date }} - {{ file.description }}</li>
+{% empty %}
+    <li>No files yet.</li>
+{% endfor %}
+</ul>
